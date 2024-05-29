@@ -1,43 +1,33 @@
-import { useState } from "react";
-import "./App.css";
-
-function App() {
-  const [count, setCount] = useState(0);
-
-  const plusCount = () => {
-    setCount(count + 1);
-  };
-
-  const miunsCount = () => {
-    setCount(count - 1);
-  };
-
-  const resetCount = () => {
-    setCount(0);
-  };
-
+const App = () => {
   return (
     <>
-      <div className="mainPost">
-        <div className="countSet">
-          <div className="top">
-            <button onClick={miunsCount} className="miunsCount">
-              -
-            </button>
-            <p>Count: {count}</p>
-            <button onClick={plusCount} className="plusCount">
-              +
-            </button>
+      <div className="todoLayout">
+        <div className="todoBody">
+          <div className="todoHader">
+            <h1>To do list</h1>
+            <form>
+              <input></input>
+              <button>제출</button>
+            </form>
           </div>
-          <div className="bottom">
-            <button onClick={resetCount} className="resetCount">
-              reset
-            </button>
+          <div className="todoMain">
+            <ul>
+              <li style={{ textDecoration: "line-through" }}>
+                <span>굶기</span>
+                <button>취소</button>
+                <button>완료</button>
+              </li>
+              <li>
+                <span>먹기</span>
+                <button>완료</button>
+                <button>완료</button>
+              </li>
+            </ul>
           </div>
         </div>
       </div>
     </>
   );
-}
+};
 
 export default App;
